@@ -19,7 +19,7 @@ export default function Homepage() {
 
         <div className="images-row">
           <img src="/img1.jpg" alt="imG 4" />
-          <img src="/img2.jpg" alt="imG 3" />
+          <img src="/img1.jpg" alt="imG 3" />
           <img src="/img3.jpg" alt="imG 2" />
         </div>
 
