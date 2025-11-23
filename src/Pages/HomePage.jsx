@@ -25,26 +25,25 @@ export default function Homepage() {
 
         <div className="categories">
           <div className="categorie">
-            <FaLaptopCode size={24} color="blue"/>
+            <FaLaptopCode size={24} color="#6c5b46ff" />
             <p>Programming</p>
           </div>
 
           <div className="categorie">
-            <FaCalculator size={24}  color="blue"/>
+            <FaCalculator size={24} color="#675641ff" />
             <p>Math</p>
           </div>
 
           <div className="categorie">
-            <FaBook size={24} color="Blue"/>
+            <FaBook size={24} color="#5e4d37ff" />
             <p>Philosophy</p>
           </div>
 
           <div className="categorie">
-            <FaRobot size={24} color="blue"/>
+            <FaRobot size={24} color="#514331ff" />
             <p>Intelligence Artificielle</p>
           </div>
         </div>
-
       </div>
     </div>
   );
