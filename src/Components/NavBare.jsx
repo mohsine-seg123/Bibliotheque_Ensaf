@@ -20,6 +20,9 @@ export default function Nav_bare() {
           <NavLink to="/category" className="nav-link">
             Category
           </NavLink>
+          <NavLink to="/shared" className="nav-link">
+            Shared Library
+          </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact us
           </NavLink>
