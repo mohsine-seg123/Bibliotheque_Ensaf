@@ -1,0 +1,61 @@
+
+.About {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap; 
+  background-color:#FFF8E7;
+}
+
+
+.About_gauch {
+  flex: 1;
+  min-width: 250px; 
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.About_gauch p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.About_gauch div {
+  width: 50px;
+  height: 4px;
+  background-color: #007bff; 
+  margin: 0.5rem 0;
+}
+
+.About_gauch button {
+  width: fit-content;
+  padding: 0.8rem 1.5rem;
+  background-color: rgb(77, 62, 43);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.About_gauch button:hover {
+  background-color: rgb(154, 125, 88);
+  transform: translateY(-2px);
+}
+
+
+.About_droit {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+

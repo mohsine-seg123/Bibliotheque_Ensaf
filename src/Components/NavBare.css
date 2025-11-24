@@ -47,7 +47,7 @@
 .nav-right .login-link {
   text-decoration: none;
   color: #fff; /* texte blanc */
-  background-color: rgb(227, 200, 165);  
+  background-color: rgb(176, 144, 103);  
   padding: 0.4rem 0.8rem;
   border-radius: 10px;
   border: 1px solid rgb(172, 143, 105);
@@ -56,5 +56,5 @@
 }
 
 .nav-right .login-link:hover {
-  background-color: #29eac3; 
+  background-color: rgb(125, 102, 72); 
 }
