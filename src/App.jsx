@@ -8,6 +8,7 @@ import Shared from "./Pages/Categorie.jsx"
 import Categorie from "./Pages/Categorie.jsx";
 import Math from "./Components/Math.jsx"
 import Physique from "./Components/Physique.jsx"
+import FailedPage from "./Pages/FailedPage.jsx"
 
 
 function App() {
@@ -16,45 +17,25 @@ function App() {
     return storedUsers ? JSON.parse(storedUsers) : [];
   });
 
-  const data = {
-  name: 'ENSAF Library',
-  location: 'Bâtiment A',
-  image: 'https://cdn-icons-png.flaticon.com/512/29/29302.png',
-  bio: 'Vous pouvez déposer vos livres ici.',
-};
 
   return (
-    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-             <Route index element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route
-          path="/login"
-          element={<Login Users={Users}/>}
-        />
-        <Route
-          path="register"
-          element={<Registre Users={Users} setUsers={setUsers} />}
-        />
-         <Route
-          path="categorie"
-          element={<Categorie />}
-        />
-        <Route 
-        path="math"
-        element={<Math/>}
-        />
-          <Route 
-        path="physique"
-        element={<Physique/>}
-        />
+          <Route index element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/login" element={<Login Users={Users} />} />
+          <Route
+            path="register"
+            element={<Registre Users={Users} setUsers={setUsers} />}
+          />
+          <Route path="categorie" element={<Categorie />} />
+          <Route path="math" element={<Math />} />
+          <Route path="physique" element={<Physique />} />
         </Route>
+        <Route path="*" element={<FailedPage />} />
       </Routes>
     </BrowserRouter>
-   
-    
   );
 }
 

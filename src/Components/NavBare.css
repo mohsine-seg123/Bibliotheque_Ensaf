@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: .5rem 2rem;
   background-color: #DEB887;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   position: fixed;
@@ -23,7 +23,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 5rem; 
+  gap: 8rem; 
 }
 
 .nav-center {
@@ -33,8 +33,9 @@
 
 .nav-center .nav-link {
   text-decoration: none; 
-  color: #4B3B2F; 
+  color: #000000; 
   font-weight: 700;
+  font-size: 18px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -46,11 +47,12 @@
 .nav-right .login-link {
   text-decoration: none;
   color: #fff; /* texte blanc */
-  background-color: rgb(176, 144, 103);  
+  background-color: rgb(199, 171, 134);  
   padding: 0.4rem 0.8rem;
   border-radius: 10px;
-  border: 1px solid rgb(172, 143, 105);
+  border: .5px solid rgb(172, 143, 105);
   font-weight: 900;
+  height: 100%;
   transition: background-color 0.6s;
 }
 

@@ -36,7 +36,7 @@ function About() {
         </button>
       </div>
 
-      {/* Right side: Book stack */}
+    
       <div className="About_droit">
         <Stack
           cardsData={images} // book images

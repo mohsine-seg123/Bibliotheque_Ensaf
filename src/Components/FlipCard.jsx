@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FlipCard.css"; // On va créer ce fichier CSS
+import "./FlipCard.css"; 
 
 const FlipCard = ({ data }) => {
   const [flipped, setFlipped] = useState(false);
@@ -9,8 +9,8 @@ const FlipCard = ({ data }) => {
       className={`flip-card ${flipped ? "flipped" : ""}`}
       onClick={() => setFlipped(!flipped)}
     >
+      
       <div className="flip-card-inner">
-        {/* Front */}
         <div className="flip-card-front">
           <img src={data.image} alt={data.name} />
           <h2>{data.name}</h2>
@@ -20,9 +20,7 @@ const FlipCard = ({ data }) => {
           </div>
         </div>
 
-        {/* Back */}
         <div className="flip-card-back">
-          {/* <p>{data.bio}</p> */}
           <div className="infos">
             <p>
               <strong></strong> {data.bio}

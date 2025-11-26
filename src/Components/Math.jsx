@@ -7,7 +7,7 @@ const PhysicsBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get("https://openlibrary.org/subjects/physics.json?limit=20")
+    axios.get("https://openlibrary.org/subjects/math.json?limit=20")
       .then(res => {
         const data = res.data.works.map(book => ({
           image: book.cover_id 
