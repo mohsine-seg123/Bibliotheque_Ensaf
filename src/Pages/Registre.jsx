@@ -67,7 +67,7 @@ export default function Register({Users,setUsers}) {
         <input
           type="email"
           id="email"
-          placeholder="Enter your email"
+          placeholder="name@example.com"
           onChange={(e) => setEmail(e.target.value)}
           name="email"
           value={email}
@@ -78,14 +78,14 @@ export default function Register({Users,setUsers}) {
         <input
           type="password"
           id="password"
-          placeholder="Put password"
+          placeholder="............."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           name="password"
           required
         />
 
-        <label htmlFor="numero">Phone</label>
+        {/* <label htmlFor="numero">Phone</label>
         <input
           type="tel"
           id="numero"
@@ -94,8 +94,8 @@ export default function Register({Users,setUsers}) {
           onChange={(e) => setPhone(e.target.value)}
           name="phone"
           required
-        />
-
+        /> */}
+{/* 
         <label htmlFor="code">Code</label>
         <input
           type="password"
@@ -106,15 +106,18 @@ export default function Register({Users,setUsers}) {
           name="code"
           autoComplete="new-password"
           required
-        />
+        /> */}
 
         <div className="btno">
-          <NavLink to="/login" className="validate">
+          <button className="validate" type="submit">
+           Create account 
+          </button>
+        </div>
+        <div className="back">
+          <p>Already have an account?</p>
+          <NavLink to="/login" className="validate1">
             Sign in
           </NavLink>
-          <button className="validate" type="submit">
-            valider
-          </button>
         </div>
       </form>
     </div>

@@ -60,7 +60,7 @@
 .form_container input[type="text"],
 .form_container input[type="tel"],
 .form_container input[type="password"] {
-  width: 100%;
+  width: 93%;
   padding: 10px 12px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -72,13 +72,10 @@
 }
 
 .validate{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
     text-decoration: none;
     background: burlywood;
     padding: 8px;
-    width: 80px;
     border-radius: 12px;
     color: brown;
     font-family: sans-serif;
@@ -88,6 +85,11 @@
     box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
     font-size: 20px;
 }
+.validate1{
+  text-decoration: none;
+  margin-top: 17px;
+  color: brown;
+}
 
 .btno{
     display: flex;
@@ -96,6 +98,10 @@
 }
 
 .validate:hover{
-    transform: scale(1.1);
+    transform: scale(1.02);
     background: rgb(204, 143, 63);
+}
+.back{
+  display: flex;
+  justify-content: center;
 }

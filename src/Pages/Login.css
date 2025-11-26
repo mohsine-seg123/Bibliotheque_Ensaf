@@ -10,13 +10,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; 
   overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .form-container {
   width: 500px;
-  height: 270px;
+  height: 350px;
   padding: 30px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.25);
@@ -40,7 +41,7 @@
 }
 
 .form-container input {
-  width: 90%;
+  width: 95%;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -57,18 +58,16 @@
 
 
 .btn {
-  display: flex;
-  margin-top: 40px;
-  justify-content: center;
-  gap: 20px;
+  margin-top: 20px;
+ 
 }
 
-.creat_account, 
+
 .login {
   background: rgb(227, 199, 163);
   color: brown;
   padding: 8px 10px;
-  width:140px;
+  width: 100%;
   border:none;
   display: flex;
   justify-content: center;
@@ -79,8 +78,42 @@
   transition:all 0.5s ease;
 }
 
-.creat_account:hover,
 .login:hover {
   transform: scale(1.01);
   background: rgb(204, 143, 63);
 }
+.google-btn {
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: rgb(227, 199, 163);
+  color: brown;
+  border: none;
+}
+p{
+  text-align: center;
+}
+.creat{
+  display: flex;
+  justify-content: center;
+}
+.creat_account{
+  margin-top: 17px;
+  margin-left: 2px;
+  text-decoration: none;
+  color: brown;
+}
+
+.google-btn:hover {
+ background: rgb(204, 143, 63);
+  transform: scale(1.02);
+}
+
