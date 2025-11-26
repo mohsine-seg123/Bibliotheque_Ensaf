@@ -99,17 +99,20 @@
   border: none;
 }
 p{
+  margin-right: 20px;
   text-align: center;
+  margin-top: 16px;
 }
 .creat{
   display: flex;
   justify-content: center;
+  gap:10px;
 }
 .creat_account{
   margin-top: 17px;
   margin-left: 2px;
   text-decoration: none;
-  color: brown;
+  color: rgb(9, 4, 65);
 }
 
 .google-btn:hover {

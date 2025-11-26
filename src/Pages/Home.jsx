@@ -1,4 +1,5 @@
 import "./HomePage.css";
+import { Search } from "lucide-react";
 
 export default function Home(){
     return(
@@ -8,7 +9,7 @@ export default function Home(){
 
         <div className="search-box">
           <input type="text" placeholder="Enter the name of books" />
-          <button>&#128269;</button>
+          <button><Search /></button>
         </div>
 
         <div className="images-row">

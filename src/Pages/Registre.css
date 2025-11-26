@@ -1,6 +1,6 @@
 
 .register {
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
   background-image: url("/img5.jpg");
@@ -88,7 +88,7 @@
 .validate1{
   text-decoration: none;
   margin-top: 17px;
-  color: brown;
+   color: rgb(9, 4, 65)
 }
 
 .btno{

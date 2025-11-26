@@ -1,18 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
  import Login from "./Pages/Login.jsx";
+ import Layout from "./Components/Layout.jsx";
 import HomePage from "./Pages/HomePage";
 import Registre from "./Pages/Registre.jsx"
 import Shared from "./Pages/Categorie.jsx"
 import Categorie from "./Pages/Categorie.jsx";
 import Math from "./Components/Math.jsx"
 import Physique from "./Components/Physique.jsx"
-function App() {
 
+
+function App() {
   const [Users, setUsers] = useState(() => {
     const storedUsers = localStorage.getItem("users");
     return storedUsers ? JSON.parse(storedUsers) : [];
   });
+
   const data = {
   name: 'ENSAF Library',
   location: 'Bâtiment A',
@@ -24,8 +27,8 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-
-        <Route index element={<HomePage />} />
+        <Route path="/" element={<Layout />}>
+             <Route index element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route
           path="/login"
@@ -35,7 +38,7 @@ function App() {
           path="register"
           element={<Registre Users={Users} setUsers={setUsers} />}
         />
-          <Route
+         <Route
           path="categorie"
           element={<Categorie />}
         />
@@ -47,8 +50,7 @@ function App() {
         path="physique"
         element={<Physique/>}
         />
-       
-        
+        </Route>
       </Routes>
     </BrowserRouter>
    
