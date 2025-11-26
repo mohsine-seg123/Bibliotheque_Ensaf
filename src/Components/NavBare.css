@@ -4,14 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .7rem 2rem;
+  padding: 1rem 2rem;
   background-color: #DEB887;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  right: 20px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   z-index: 100;
 }
 

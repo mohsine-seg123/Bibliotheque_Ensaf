@@ -1,0 +1,82 @@
+.features {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.features h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.features_cartes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 40px;
+}
+
+.feature_carte {
+  background: #f3e2cd;
+  height: 160px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature_carte:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.feature_carte h3 {
+
+  font-size: 30px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.feature_carte h3 img{
+   width: 40px;
+   height: 40px;
+}
+
+.feature_carte p {
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+
+.features .submet {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.features .submet button {
+  border-radius: 20px;
+  background-color: rgb(219, 179, 127);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  transition: 0.3s ease;
+}
+
+.features .submet button:hover {
+  transform: scale(1.05);
+}

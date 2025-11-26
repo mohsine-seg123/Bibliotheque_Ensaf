@@ -5,19 +5,19 @@ function About() {
   const images = [
     {
       id: 1,
-      img: "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg",
+      img: "./About/about1.jpg",
     },
     {
       id: 2,
-      img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=500&auto=format",
+      img: "./About/about2.jpg",
     },
     {
       id: 3,
-      img: "https://images.unsplash.com/photo-1452626212852-811d58933cae?q=80&w=500&auto=format",
+      img: "./About/about3.jpg",
     },
     {
       id: 4,
-      img: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=500&auto=format",
+      img: "./About/about4.jpg",
     },
   ];
 

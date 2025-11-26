@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
 
+
 export default function Nav_bare() {
   return (
     <nav className="navbar">
@@ -19,9 +20,6 @@ export default function Nav_bare() {
           </NavLink>
           <NavLink to="/category" className="nav-link">
             Category
-          </NavLink>
-          <NavLink to="/shared" className="nav-link">
-            Shared Library
           </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact us

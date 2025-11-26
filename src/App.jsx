@@ -3,7 +3,8 @@ import { useState } from "react";
  import Login from "./Pages/Login.jsx";
 import HomePage from "./Pages/HomePage";
 import Registre from "./Pages/Registre.jsx"
-
+import Contact from "./Pages/Contactt.jsx";
+import Layout from "./Components/Layout.jsx"
 function App() {
 
   const [Users, setUsers] = useState(() => {
@@ -14,16 +15,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route
-          path="/login"
-          element={<Login Users={Users}/>}
-        />
-        <Route
-          path="register"
-          element={<Registre Users={Users} setUsers={setUsers} />}
-        />
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<HomePage />} />
+          <Route path="login" element={<Login Users={Users} />} />
+          <Route
+            path="register"
+            element={<Registre Users={Users} setUsers={setUsers} />}
+          />
+          <Route path="contact" element={<Contact />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
