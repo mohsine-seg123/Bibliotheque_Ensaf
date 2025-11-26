@@ -1,28 +1,43 @@
-
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
-import MathBooks from '../Components/Math';
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
 
 export default function Nav_bare() {
-    const [open, setOpen] = useState(false);
-  
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScroll = (id) => {
+    if (location.pathname !== "/home" && location.pathname !== "/") {
+      navigate("/home");
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
         <Logo />
       </div>
+
       <div className="nav">
         <div className="nav-center">
-          <NavLink to="/home" className="nav-link">
+          {/* Liens vers sections de HomePage */}
+          <span className="nav-link" onClick={() => handleScroll("home")}>
             Home
-          </NavLink>
-          <NavLink to="/about" className="nav-link">
+          </span>
+          <span className="nav-link" onClick={() => handleScroll("about")}>
             About
-          </NavLink>
-            <div
+          </span>
+
+          <div
             className="nav-link dropdown"
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
@@ -30,16 +45,37 @@ export default function Nav_bare() {
             Category
             {open && (
               <div className="dropdown-menu">
-                <NavLink to="/math" className="dropdown-item">Math</NavLink>
-                <NavLink to="/physique" className="dropdown-item">Physique</NavLink>
-                <NavLink to="/philosophie" className="dropdown-item">Philosophie</NavLink>
-                <NavLink to="/datascience" className="dropdown-item">Data Science</NavLink>
+                <NavLink to="/subject/philosophy" className="dropdown-item">
+                  Philosophie
+                </NavLink>
+                <NavLink
+                  to="/subject/artificial_intelligence"
+                  className="dropdown-item"
+                >
+                  Artificial Intelligence
+                </NavLink>
+                <NavLink to="/subject/programming" className="dropdown-item">
+                  Programming
+                </NavLink>
+                <NavLink
+                  to="/subject/machine_learning"
+                  className="dropdown-item"
+                >
+                  Machine Learning
+                </NavLink>
+                <NavLink to="/subject/mathematics" className="dropdown-item">
+                  Math
+                </NavLink>
+                <NavLink to="/subject/physics" className="dropdown-item">
+                  Physique
+                </NavLink>
               </div>
             )}
           </div>
-          <NavLink to="/contact" className="nav-link">
-            Contact us
-          </NavLink>
+
+          <span className="nav-link" onClick={() => handleScroll("contact")}>
+            Contact Us
+          </span>
         </div>
 
         <div className="nav-right">

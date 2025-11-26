@@ -8,6 +8,8 @@ import Shared from "./Pages/Categorie.jsx"
 import Categorie from "./Pages/Categorie.jsx";
 import Math from "./Components/Math.jsx"
 import Physique from "./Components/Physique.jsx"
+import BooksBySubject from "./Components/BooksBySubject.jsx";
+
 
 
 function App() {
@@ -16,12 +18,7 @@ function App() {
     return storedUsers ? JSON.parse(storedUsers) : [];
   });
 
-  const data = {
-  name: 'ENSAF Library',
-  location: 'Bâtiment A',
-  image: 'https://cdn-icons-png.flaticon.com/512/29/29302.png',
-  bio: 'Vous pouvez déposer vos livres ici.',
-};
+
 
   return (
     
@@ -50,7 +47,9 @@ function App() {
         path="physique"
         element={<Physique/>}
         />
+        <Route path="/subject/:name" element={<BooksBySubject/>} />
         </Route>
+        
       </Routes>
     </BrowserRouter>
    
