@@ -4,7 +4,7 @@
   height: 500px;
   perspective: 1000px;
   cursor: pointer;
-  margin: 20px;
+  margin: 15px;
 }
 
 .flip-card-inner {
@@ -191,7 +191,7 @@
   border: none;
   width: 200px;
   border-radius: 50px;
-  background: linear-gradient(45deg,white,orange);
+  background: linear-gradient(45deg,rgb(193, 133, 133));
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -208,7 +208,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
   transform: rotate(45deg);
   transition: all 0.5s;
 }

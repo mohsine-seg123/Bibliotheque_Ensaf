@@ -2,6 +2,7 @@ import "./HomePage.css";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Components/Spinner";
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const handleSearch = () => {
+    
     if (!searchValue.trim()) return;
     navigate(`/subject/search?query=${encodeURIComponent(searchValue)}`);
   };
