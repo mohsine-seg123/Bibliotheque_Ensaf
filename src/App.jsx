@@ -8,6 +8,8 @@ import Categorie from "./Pages/Categorie.jsx";
 import FailedPage  from "./Pages/FailedPage.jsx"
 import BooksBySubject from "./Components/BooksBySubject.jsx";
 import Reserver from "./Components/Reserver.jsx";
+import SearchBooks from "./Components/SearchBooks.jsx"
+
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="Reserver" element={<Reserver />} />
         </Route>
         <Route path="*" element={<FailedPage />} />
+        <Route path="/subject/search" element={<SearchBooks />} />
+        
       </Routes>
     </BrowserRouter>
   );

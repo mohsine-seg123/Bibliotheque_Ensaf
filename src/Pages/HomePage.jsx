@@ -4,6 +4,7 @@ import "./HomePage.css";
 import About from "./AboutPage.jsx";
 import Features from "../Components/Features.jsx";
 import Contactt from "./Contactt.jsx";
+import ScrollToTop from "../Components/ScrollToTop.jsx";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <div id="contact">
         <Contactt />
       </div>
+      <ScrollToTop/>
     </div>
   );
 }
