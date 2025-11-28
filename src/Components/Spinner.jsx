@@ -5,7 +5,7 @@ import "./Spinner.css";
 function Spinner() {
   return (
     <div className="spinnerContainer">
-      <div className="styles.spinner"></div>
+      <div className="spinner"></div>
     </div>
   );
 }

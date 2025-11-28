@@ -1,6 +1,6 @@
 
 .flip-card {
-  width: 250px;
+  width: 270px;
   height: 500px;
   perspective: 1000px;
   cursor: pointer;
@@ -21,13 +21,14 @@
 
 
 .flip-card-front {
-  background-color: #fff;
-  padding: 0;
+  background-color: burlywood;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
   position: absolute;
+  gap:10px;
   top: 0;
   left: 0;
   backface-visibility: hidden;
@@ -41,32 +42,32 @@
   width: 100%;
   height: 60%;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 10px;
 }
 
 
 .flip-card-front h2 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
   margin: 12px 14px 6px;
   line-height: 1.1;
   color: #111;
-  text-align: left;
+  text-align: center;
 }
 
 .flip-card-front p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 0 14px 12px;
   color: #444;
-  text-align: left;
+  text-align: center;
 }
 
 .flip-card-back {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 93%;
+  height: 93%;
   border-radius: 10px;
   backface-visibility: hidden;
   transform: rotateY(180deg);
@@ -162,7 +163,6 @@
 }
 
 
-/* Container pour espacer les cartes */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -171,13 +171,17 @@
   padding: 40px 20px; /* espace autour des cartes */
   margin-top: 80px; /* espace entre navbar et cartes */
 }
+
+
 .reserve-btn {
   margin-top: 15px;
+  position: relative;
+  bottom: 10px;
   padding: 12px 24px;
   border: none;
-  width: 200px;
-  border-radius: 50px;
-  background: linear-gradient(45deg,white,orange);
+  width: 150px;
+  border-radius: 20px;
+  background: brown;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -187,27 +191,13 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.reserve-btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: rotate(45deg);
-  transition: all 0.5s;
-}
-
-.reserve-btn:hover::before {
-  top: 100%;
-  left: 100%;
-}
 
 .reserve-btn:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(255, 75, 43, 0.6);
+  box-shadow: 0 8px 10px rgba(255, 75, 43, 0.6);
 }
+
+
 .btn_par{
     display: flex;
     justify-content: center;

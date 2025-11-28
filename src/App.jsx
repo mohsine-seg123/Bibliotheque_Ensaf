@@ -4,11 +4,10 @@ import { useState } from "react";
  import Layout from "./Components/Layout.jsx";
 import HomePage from "./Pages/HomePage";
 import Registre from "./Pages/Registre.jsx"
-import Shared from "./Pages/Categorie.jsx"
 import Categorie from "./Pages/Categorie.jsx";
-import Math from "./Components/Math.jsx"
-import Physique from "./Components/Physique.jsx"
-import FailedPage from "./Pages/FailedPage.jsx"
+import FailedPage  from "./Pages/FailedPage.jsx"
+import BooksBySubject from "./Components/BooksBySubject.jsx";
+import Reserver from "./Components/Reserver.jsx";
 
 
 function App() {
@@ -30,8 +29,8 @@ function App() {
             element={<Registre Users={Users} setUsers={setUsers} />}
           />
           <Route path="categorie" element={<Categorie />} />
-          <Route path="math" element={<Math />} />
-          <Route path="physique" element={<Physique />} />
+          <Route path="/subject/:name" element={<BooksBySubject />} />
+          <Route path="Reserver" element={<Reserver />} />
         </Route>
         <Route path="*" element={<FailedPage />} />
       </Routes>
