@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import FlipCard from "./FlipCard";
+import ScrollToTop from "./ScrollToTop";
+
 
 const BooksBySubject = () => {
   const { name } = useParams(); 
@@ -14,7 +16,7 @@ const BooksBySubject = () => {
         const data = res.data.works.map(book => ({
           image: book.cover_id
             ? `https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`
-            : "https://via.placeholder.com/150",
+            : "/Img_err.png",
 
           name: book.title,
           location: book.authors ? book.authors[0].name : "Auteur inconnu",
@@ -43,6 +45,7 @@ const BooksBySubject = () => {
       {books.map((book, i) => (
         <FlipCard key={i} data={book} />
       ))}
+      <ScrollToTop/>
     </div>
   );
 };

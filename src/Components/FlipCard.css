@@ -1,4 +1,4 @@
-/* --- Card container (front already defined above) --- */
+
 .flip-card {
   width: 250px;
   height: 500px;
@@ -13,13 +13,14 @@
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  
 }
 
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* --- Front --- */
+
 .flip-card-front {
   background-color: #fff;
   padding: 0;
@@ -34,9 +35,9 @@
   width: 100%;
   height: 100%;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  background: linear-gradient(180deg,white 0%, rgb(224, 175, 83) 100%);
 }
 
-/* Image fills width and 60% of height */
 .flip-card-front img {
   width: 100%;
   height: 60%;
@@ -44,7 +45,7 @@
   border-radius: 0;
 }
 
-/* Title & meta */
+
 .flip-card-front h2 {
   font-size: 20px;
   font-weight: 700;
@@ -61,7 +62,7 @@
   text-align: left;
 }
 
-/* --- Back --- */
+
 .flip-card-back {
   position: absolute;
   top: 0;
@@ -76,13 +77,13 @@
   justify-content: space-between;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   padding: 18px;
-  background: linear-gradient(180deg,rgb(192, 98, 98) 0%, #c4da85 100%); /* bleu foncé */
+  background: linear-gradient(180deg,white 0%, rgb(224, 175, 83) 100%);
   color:black;
   overflow: hidden;
   
 }
 
-/* Back content top block (title + short description) */
+
 .flip-card-back .top {
   display: block;
 }
@@ -95,20 +96,19 @@
   line-height: 1.1;
 }
 
-/* description / bio */
+
 .flip-card-back p {
   margin: 0 0 12px 0;
   font-size: 13px;
   color: black;
   line-height: 1.4;
-  max-height: 6.2em; /* limite la hauteur et évite overflow */
+  max-height: 6.2em; 
   overflow: hidden;
   font-size: 40px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-overflow: ellipsis;
 }
 
-/* stats list */
 .flip-card-back ul {
   list-style: none;
   padding: 0;
@@ -131,8 +131,6 @@
 
 }
 
-
-/* links / actions at bottom */
 .flip-card-back .links {
   display: flex;
   gap: 10px;
@@ -148,7 +146,7 @@
   transform: translateY(-2px);
 }
 
-/* reserve button style (si tu veux un bouton séparé) */
+
 .flip-card-back .btn-reserve {
   margin-left: auto;
   background: #fff;
@@ -165,19 +163,19 @@
   transform: translateY(-2px);
 }
 
-/* Responsive: réduire la carte sur petits écrans */
+
 @media (max-width: 420px) {
   .flip-card { width: 200px; height: 320px; }
 }
 
-/* Container pour espacer les cartes */
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* espace entre les cartes */
-  padding: 40px 20px; /* espace autour des cartes */
-  margin-top: 80px; /* espace entre navbar et cartes */
+  gap: 30px; 
+  padding: 40px 20px; 
+  margin-top: 80px; 
 }
 .reserve-btn {
   margin-top: 15px;
@@ -185,7 +183,7 @@
   border: none;
   width: 200px;
   border-radius: 50px;
-  background: linear-gradient(45deg,white,orange);
+  background: linear-gradient(45deg,rgb(160, 45, 45),rgb(0, 60, 255));
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -202,7 +200,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
   transform: rotate(45deg);
   transition: all 0.5s;
 }

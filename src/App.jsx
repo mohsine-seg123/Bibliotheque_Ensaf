@@ -9,6 +9,7 @@ import Categorie from "./Pages/Categorie.jsx";
 import Math from "./Components/Math.jsx"
 import Physique from "./Components/Physique.jsx"
 import BooksBySubject from "./Components/BooksBySubject.jsx";
+import SearchBooks from "./Components/SearchBooks.jsx"
 
 
 
@@ -49,6 +50,8 @@ function App() {
         />
         <Route path="/subject/:name" element={<BooksBySubject/>} />
         </Route>
+        <Route path="/subject/search" element={<SearchBooks />} />
+
         
       </Routes>
     </BrowserRouter>
