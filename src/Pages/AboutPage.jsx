@@ -36,11 +36,23 @@ function About() {
         </button>
       </div>
 
-    
       <div className="About_droit">
         <Stack
-          cardsData={images} // book images
-          cardDimensions={{ width: 320, height: 320 }}
+          cardsData={images}
+          cardDimensions={{
+            width:
+              window.innerWidth <= 480
+                ? 200
+                : window.innerWidth <= 768
+                ? 250
+                : 320,
+            height:
+              window.innerWidth <= 480
+                ? 200
+                : window.innerWidth <= 768
+                ? 250
+                : 320,
+          }}
           randomRotation={true}
           sendToBackOnClick={true}
           sensitivity={180}
