@@ -1,10 +1,13 @@
-.reserver{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: burlywood;
-    overflow: hidden;
+.reserver {
+  width: 100vw;          /* largeur plein écran */
+  height: 100vh;         /* hauteur plein écran */
+  display: flex;
+  justify-content: center; /* centrer horizontalement */
+  align-items: center;     /* centrer verticalement */
+  background-color: burlywood;
+  overflow: auto;          /* scroll si petit écran */
+  padding: 20px;           /* espace autour du formulaire */
+  box-sizing: border-box;
 }
 
 .reservation-container {
@@ -79,4 +82,61 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .reservation-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .reservation-form input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .reserve-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .success-message button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .reservation-container h2 {
+    font-size: 18px;
+  }
+
+  .reservation-form input {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .reserve-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .success-message h3 {
+    font-size: 16px;
+  }
+
+  .success-message p {
+    font-size: 13px;
+  }
+
+  .success-message button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
