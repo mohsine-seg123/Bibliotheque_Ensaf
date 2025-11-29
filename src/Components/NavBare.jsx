@@ -1,13 +1,35 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const mobileMenuRef = useRef(null);
+  const hamburgerRef = useRef(null);
+
+  // Fermer le menu mobile quand on clique à l'extérieur
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mobileMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   const handleScroll = (id) => {
     if (location.pathname !== "/home" && location.pathname !== "/") {
@@ -20,7 +42,7 @@ export default function Nav_bare() {
       const section = document.getElementById(id);
       if (section) section.scrollIntoView({ behavior: "smooth" });
     }
-    setMobileMenuOpen(false); 
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -29,15 +51,18 @@ export default function Nav_bare() {
         <Logo />
       </div>
 
+      {/* Menu Hamburger */}
       <div
         className="hamburger"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        ref={hamburgerRef}
       >
         <span></span>
         <span></span>
         <span></span>
       </div>
 
+      {/* Navigation Desktop */}
       <div className="nav">
         <div className="nav-center">
           <span className="nav-link" onClick={() => handleScroll("home")}>
@@ -95,9 +120,9 @@ export default function Nav_bare() {
         </div>
       </div>
 
-    
+      {/* Navigation Mobile */}
       {mobileMenuOpen && (
-        <div className="nav-mobile">
+        <div className="nav-mobile" ref={mobileMenuRef}>
           <div className="nav-center">
             <span className="nav-link" onClick={() => handleScroll("home")}>
               Home

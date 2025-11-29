@@ -65,3 +65,87 @@
   position: relative;
 }
 
+/* ----- Tablette (≤ 992px) ----- */
+@media (max-width: 992px) {
+  .About {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+
+  .About_gauch {
+    text-align: center;
+    padding: 0 20px; /* espace horizontal */
+  }
+
+  .About_gauch p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  .About_gauch button {
+    margin-top: 30px;
+    padding: 0.7rem 1.3rem;
+    width: auto; /* ne prend pas toute la largeur */
+    align-self: center; /* centrer le bouton */
+  }
+
+  .About_droit {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ----- Mobile (≤ 768px) ----- */
+@media (max-width: 768px) {
+  .About {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .About_gauch {
+    padding: 0 15px; /* espace horizontal */
+  }
+
+  .About_gauch p {
+    font-size: 1rem;
+  }
+
+  .About_gauch button {
+    width: fit-content; /* largeur automatique */
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+    align-self: center; /* centrer */
+  }
+
+  .About_droit {
+    width: 100%;
+  }
+}
+
+/* ----- Très petit mobile (≤ 480px) ----- */
+@media (max-width: 480px) {
+  .About_gauch {
+    padding: 0 10px; /* espace horizontal */
+  }
+
+  .About_gauch h1 {
+    font-size: 1.5rem;
+  }
+
+  .About_gauch p {
+    font-size: 0.9rem;
+  }
+
+  .About_gauch button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    width: fit-content;
+    align-self: center;
+  }
+
+  .About {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}

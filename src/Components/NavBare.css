@@ -124,24 +124,23 @@
 /* ========== RESPONSIVE MOBILE ========== */
 @media screen and (max-width: 480px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    padding: .7rem 1rem;
   }
   
   .logo {
     font-size: 1.2rem;
   }
   
-  /* Cacher la navigation desktop */
+  
   .nav {
     display: none;
   }
-  
-  /* Afficher le hamburger */
+ 
   .hamburger {
     display: flex;
   }
   
-  /* Menu mobile compact */
+ 
   .nav-mobile {
     position: fixed;
     top: 60px;
@@ -175,7 +174,7 @@
     width: 100%;
   }
   
-  /* Dropdown mobile - caché par défaut */
+  
   .nav-mobile .dropdown-menu {
     display: none;
     position: static;
@@ -185,8 +184,7 @@
     margin-top: 0.5rem;
     border-radius: 5px;
   }
-  
-  /* Afficher le dropdown seulement quand on hover sur Category */
+ 
   .nav-mobile .dropdown:hover .dropdown-menu {
     display: flex;
   }
