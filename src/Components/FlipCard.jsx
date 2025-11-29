@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import "./FlipCard.css"; 
+import "./FlipCard.css";
 import RatingStars from "./RatingStar";
 import { useNavigate } from "react-router-dom";
 
 const FlipCard = ({ data }) => {
   const [flipped, setFlipped] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+
+  const handleReserveClick = (e) => {
+    e.stopPropagation();
+    navigate("/reserve", { state: { book: data } });
+  };
+
   return (
     <div
       className={`flip-card ${flipped ? "flipped" : ""}`}
@@ -16,14 +22,9 @@ const FlipCard = ({ data }) => {
           <img src={data.image} alt={data.name} />
           <h2>{data.name}</h2>
           <p>{data.location}</p>
+
           <div className="btn_par">
-            <button
-              className="reserve-btn"
-              onClick={(e) => {
-                e.stopPropagation(); 
-              navigate("/Reserver");
-              }}
-            >
+            <button className="reserve-btn" onClick={handleReserveClick}>
               Reserve
             </button>
           </div>
@@ -31,9 +32,7 @@ const FlipCard = ({ data }) => {
 
         <div className="flip-card-back">
           <div className="infos">
-            <p>
-              <strong></strong> {data.bio}
-            </p>
+            <p>{data.bio}</p>
             <p>Éditions : {data.stats?.["Éditions"]}</p>
             <p>Sujet : {data.stats?.["Sujet"]}</p>
             <div style={{ marginTop: "50px" }}>
