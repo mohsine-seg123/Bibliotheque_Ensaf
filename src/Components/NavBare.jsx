@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -19,6 +20,7 @@ export default function Nav_bare() {
       const section = document.getElementById(id);
       if (section) section.scrollIntoView({ behavior: "smooth" });
     }
+    setMobileMenuOpen(false); 
   };
 
   return (
@@ -27,9 +29,17 @@ export default function Nav_bare() {
         <Logo />
       </div>
 
+      <div
+        className="hamburger"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <div className="nav">
         <div className="nav-center">
-          {/* Liens vers sections de HomePage */}
           <span className="nav-link" onClick={() => handleScroll("home")}>
             Home
           </span>
@@ -84,6 +94,60 @@ export default function Nav_bare() {
           </NavLink>
         </div>
       </div>
+
+    
+      {mobileMenuOpen && (
+        <div className="nav-mobile">
+          <div className="nav-center">
+            <span className="nav-link" onClick={() => handleScroll("home")}>
+              Home
+            </span>
+            <span className="nav-link" onClick={() => handleScroll("about")}>
+              About
+            </span>
+
+            <div className="nav-link dropdown">
+              Category
+              <div className="dropdown-menu">
+                <NavLink to="/subject/philosophy" className="dropdown-item">
+                  Philosophie
+                </NavLink>
+                <NavLink
+                  to="/subject/artificial_intelligence"
+                  className="dropdown-item"
+                >
+                  Artificial Intelligence
+                </NavLink>
+                <NavLink to="/subject/programming" className="dropdown-item">
+                  Programming
+                </NavLink>
+                <NavLink
+                  to="/subject/machine_learning"
+                  className="dropdown-item"
+                >
+                  Machine Learning
+                </NavLink>
+                <NavLink to="/subject/mathematics" className="dropdown-item">
+                  Math
+                </NavLink>
+                <NavLink to="/subject/physics" className="dropdown-item">
+                  Physique
+                </NavLink>
+              </div>
+            </div>
+
+            <span className="nav-link" onClick={() => handleScroll("contact")}>
+              Contact Us
+            </span>
+          </div>
+
+          <div className="nav-right">
+            <NavLink to="/login" className="login-link">
+              Login
+            </NavLink>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

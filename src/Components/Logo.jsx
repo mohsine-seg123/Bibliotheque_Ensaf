@@ -1,4 +1,4 @@
 
 export default function Logo() {
-  return <div>ENSAFLib</div>;
+  return <div>EnsaFLib</div>;
 }
