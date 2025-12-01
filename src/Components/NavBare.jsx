@@ -11,7 +11,7 @@ export default function Nav_bare() {
   const mobileMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
 
-  // Fermer le menu mobile quand on clique à l'extérieur
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -45,13 +45,13 @@ export default function Nav_bare() {
     setMobileMenuOpen(false);
   };
 
+  
   return (
     <nav className="navbar">
       <div className="logo">
         <Logo />
       </div>
 
-      {/* Menu Hamburger */}
       <div
         className="hamburger"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -62,7 +62,7 @@ export default function Nav_bare() {
         <span></span>
       </div>
 
-      {/* Navigation Desktop */}
+  
       <div className="nav">
         <div className="nav-center">
           <span className="nav-link" onClick={() => handleScroll("home")}>
@@ -120,7 +120,7 @@ export default function Nav_bare() {
         </div>
       </div>
 
-      {/* Navigation Mobile */}
+     
       {mobileMenuOpen && (
         <div className="nav-mobile" ref={mobileMenuRef}>
           <div className="nav-center">
@@ -165,6 +165,7 @@ export default function Nav_bare() {
               Contact Us
             </span>
           </div>
+
 
           <div className="nav-right">
             <NavLink to="/login" className="login-link">
