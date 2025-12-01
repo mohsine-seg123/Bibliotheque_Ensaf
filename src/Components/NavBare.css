@@ -15,6 +15,7 @@
 }
 
 
+
 .logo {
   font-size: 1.5rem;
 }
@@ -100,4 +101,14 @@
 .dropdown-item:hover {
   background-color: #f0f0f0;
 }
+/* ========================= */
+/*     🚀 RESPONSIVE NAV     */
+/* ========================= */
 
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+  user-select: none;
+}

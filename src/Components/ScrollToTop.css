@@ -2,12 +2,12 @@
   position: fixed;
   bottom: 20px;
   right: 2px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border: none;
   outline: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6a5af9, #7f73ff);
+  background: linear-gradient(135deg, orange,rgb(169, 87, 87));
   color: #fff;
   font-size: 28px;
   font-weight: bold;
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
 
-  box-shadow: 0 8px 20px rgba(106, 90, 249, 0.4);
+  box-shadow: 0 8px 20px rgb(169, 87, 87);
   animation: popIn 0.4s ease;
 
   transition: transform 0.3s ease, 
@@ -34,8 +34,8 @@
 /* Effet hover */
 .scroll-top-btn:hover {
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 12px 30px rgba(106, 90, 249, 0.6);
-  background: linear-gradient(135deg, #7f73ff, #6a5af9);
+  box-shadow: 0 12px 30px rgb(169, 87, 87);
+  background: linear-gradient(135deg, orange,rgb(169, 87, 87));
 }
 
 /* Effet clic */

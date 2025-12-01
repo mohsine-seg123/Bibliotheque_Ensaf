@@ -1,6 +1,6 @@
 // Import Firebase core
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup,signOut } from "firebase/auth";
 
 // Ton vrai config Firebase
 const firebaseConfig = {
@@ -22,6 +22,7 @@ export const googleProvider = new GoogleAuthProvider();
 
 // Fonction Login Google
 export const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
-export const logout = async () => {
-  await signOut(auth);
-};
+// export const logout = async () => {
+//   await signOut(auth);
+// };
+export const logout = () => signOut(auth);
