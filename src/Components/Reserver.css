@@ -53,10 +53,10 @@
   outline: none;
 }
 
-.reserve-btn {
+.reserve-btnt {
   margin-top: 10px;
   padding: 12px;
-  background: rgb(208, 155, 57);
+  background: rgb(204, 159, 103);
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -64,15 +64,15 @@
   font-size: 16px;
   font-weight: bold;
   transition: 0.3s;
+  width: 100px;
 }
+
 .divbtn {
+   gap: 20px;
   display: flex;
   justify-content: center;
 }
 
-.reserve-btn:hover {
-  background: rgb(221, 157, 38);
-}
 
 .success-message {
   text-align: center;

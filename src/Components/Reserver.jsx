@@ -113,8 +113,15 @@ export default function Reserver() {
             />
 
             <div className="divbtn">
-              <button type="submit" className="reserve-btn">
+              <button type="submit" className="reserve-btnt">
                 Reserve
+              </button>
+              <button
+                type="submit"
+                className="reserve-btnt"
+                onClick={handleReserveClick}
+              >
+                Annuler
               </button>
             </div>
           </form>
