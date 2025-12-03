@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import "./Reserver.css";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 export default function Reserver() {
+
+  
+const location = useLocation();
+const book = location.state?.book;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -49,6 +56,9 @@ export default function Reserver() {
         {submitted ? (
           <div className="success-message">
             <h3>Reservation Confirmed ✔</h3>
+            <p>
+              <strong>Book:</strong> {book?.name}
+            </p>
 
             <p>
               <strong>Name:</strong> {form.name}
