@@ -21,7 +21,7 @@ export default function Reserver() {
 
   const handleReserveClick = (e) => {
     e.stopPropagation();
-    navigate("/home");
+    setTimeout(()=>{ navigate("/home");},500)
   };
 
   const handleSubmit = (e) => {
@@ -35,7 +35,6 @@ export default function Reserver() {
       !form.endDate
     ) {
       alert("Please fill in all fields.");
-      return;
     }
 
     setSubmitted(true);
@@ -66,7 +65,7 @@ export default function Reserver() {
               <strong>Return Date:</strong> {form.endDate}
             </p>
 
-            <button onClick={() => setSubmitted(false)}>
+            <button onClick={handleReserveClick}>
               Make Another Reservation
             </button>
           </div>
@@ -112,13 +111,11 @@ export default function Reserver() {
               onChange={handleChange}
             />
 
-            <button
-              type="submit"
-              className="reserve-btn"
-              onClick={handleReserveClick}
-            >
-              Reserve
-            </button>
+            <div className="divbtn">
+              <button type="submit" className="reserve-btn">
+                Reserve
+              </button>
+            </div>
           </form>
         )}
       </div>

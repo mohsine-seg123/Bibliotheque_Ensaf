@@ -32,10 +32,6 @@ useEffect(() => {
             Éditions: book.edition_count || "N/A",
             Sujet: name.replace(/_/g, " ").toUpperCase(),
           },
-
-          socialLinks: {
-            "Voir Livre": `https://openlibrary.org${book.key}`,
-          },
         }));
 
         setBooks(data);
