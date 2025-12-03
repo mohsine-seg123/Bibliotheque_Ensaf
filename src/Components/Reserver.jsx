@@ -35,9 +35,10 @@ export default function Reserver() {
       !form.endDate
     ) {
       alert("Please fill in all fields.");
+      navigate("/reserve");
+    }else{
+        setSubmitted(true);
     }
-
-    setSubmitted(true);
   };
 
   return (

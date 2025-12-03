@@ -19,7 +19,7 @@
   margin: 80px auto;
   padding: 25px;
   background-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
@@ -77,10 +77,11 @@
 .success-message {
   text-align: center;
   padding: 20px;
+  font-size: 20px;
 }
 
 .success-message h3 {
-  color: green;
+  color: rgb(0, 0, 0);
 }
 
 .success-message p {
@@ -90,9 +91,17 @@
 .success-message button {
   margin-top: 15px;
   padding: 10px 15px;
-  background: #4a6cf7;
+  background: rgb(137, 102, 56);
   color: white;
   border: none;
   border-radius: 8px;
+  box-shadow: 1px 3px brown;
+  font-size: 17px;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.success-message button:hover{
+   box-shadow:none ;
+   background: rgb(91, 68, 39);
 }
