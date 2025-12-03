@@ -1,53 +1,128 @@
-
 import React, { useState } from "react";
 import "./Reserver.css";
+import { useNavigate } from "react-router-dom";
 
-const ReserveModal = ({ isOpen, onClose, book }) => {
-     const [name, setName] = useState("");
+export default function Reserver() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    cne: "",
+    startDate: "",
+    endDate: "",
+  });
 
-     const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  if (!isOpen) return null;
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleReserve = (e) => {
+  const navigate=useNavigate();
+
+  const handleReserveClick = (e) => {
+    e.stopPropagation();
+    navigate("/home");
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Réservation envoyée pour : ${book.name}`);
-    onClose();
+
+    if (
+      !form.name ||
+      !form.email ||
+      !form.cne ||
+      !form.startDate ||
+      !form.endDate
+    ) {
+      alert("Please fill in all fields.");
+    }
+
+    setSubmitted(true);
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
-        <h2>Réserver : {book.name}</h2>
+    <div className="reserver">
+      <div className="reservation-container">
+        <h2>📚 Book Reservation</h2>
 
-        <form onSubmit={handleReserve}>
-          <label>Votre nom :</label>
-          <input
-            type="text"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+        {submitted ? (
+          <div className="success-message">
+            <h3>Reservation Confirmed ✔</h3>
 
-          <label>Email :</label>
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+            <p>
+              <strong>Name:</strong> {form.name}
+            </p>
+            <p>
+              <strong>Email:</strong> {form.email}
+            </p>
+            <p>
+              <strong>CNE:</strong> {form.cne}
+            </p>
+            <p>
+              <strong>Pick-up Date:</strong> {form.startDate}
+            </p>
+            <p>
+              <strong>Return Date:</strong> {form.endDate}
+            </p>
 
-          <button type="submit" className="submit-btn">
-            Confirmer
-          </button>
-        </form>
+            <button onClick={() => setSubmitted(false)}>
+              Make Another Reservation
+            </button>
+          </div>
+        ) : (
+          <form className="reservation-form" onSubmit={handleSubmit}>
+            <label>Full Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+            />
 
-        <button className="close-btn" onClick={onClose}>
-          X
-        </button>
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+
+            <label>CNE:</label>
+            <input
+              type="text"
+              name="cne"
+              value={form.cne}
+              onChange={handleChange}
+            />
+
+            <label>Pick-up Date:</label>
+            <input
+              type="date"
+              name="startDate"
+              value={form.startDate}
+              onChange={handleChange}
+            />
+
+            <label>Return Date:</label>
+            <input
+              type="date"
+              name="endDate"
+              value={form.endDate}
+              onChange={handleChange}
+            />
+
+            <div className="divbtn">
+              <button
+              type="submit"
+              className="reserve-btn"
+              onClick={handleReserveClick}
+            >
+              Reserve
+            </button>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   );
-};
-
-export default ReserveModal;
+}

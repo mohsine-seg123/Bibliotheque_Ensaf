@@ -7,10 +7,8 @@ import Registre from "./Pages/Registre.jsx"
 import Categorie from "./Pages/Categorie.jsx";
 import FailedPage  from "./Pages/FailedPage.jsx"
 import BooksBySubject from "./Components/BooksBySubject.jsx";
-import Reserver from "./Components/Reserver.jsx";
 import SearchBooks from "./Components/SearchBooks.jsx"
-
-
+import Reserver from "./Components/Reserver.jsx";
 
 function App() {
   const [Users, setUsers] = useState(() => {
@@ -32,11 +30,10 @@ function App() {
           />
           <Route path="categorie" element={<Categorie />} />
           <Route path="/subject/:name" element={<BooksBySubject />} />
-          <Route path="Reserver" element={<Reserver />} />
         </Route>
         <Route path="*" element={<FailedPage />} />
         <Route path="/subject/search" element={<SearchBooks />} />
-        
+        <Route path="/reserve" element={<Reserver />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,3 @@
-
 .flip-card {
   width: 270px;
   height: 500px;
@@ -21,7 +20,6 @@
   transform: rotateY(180deg);
 }
 
-
 .flip-card-front {
   background-color: burlywood;
   padding: 0px;
@@ -30,24 +28,22 @@
   border-radius: 10px;
   overflow: hidden;
   position: absolute;
-  gap:10px;
+  gap: 5px;
   top: 0;
   left: 0;
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  background: linear-gradient(180deg,white 0%, rgb(224, 175, 83) 100%);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(180deg, white 0%, rgb(224, 175, 83) 100%);
 }
 
-/* Image fills width and 60% of height */
 .flip-card-front img {
   width: 100%;
   height: 60%;
   object-fit: cover;
   border-radius: 10px;
 }
-
 
 .flip-card-front h2 {
   font-size: 20px;
@@ -65,7 +61,7 @@
   text-align: center;
 }
 
-/* --- Back --- */
+
 .flip-card-back {
   position: absolute;
   top: 0;
@@ -78,14 +74,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   padding: 18px;
-  background: linear-gradient(180deg,white 0%, rgb(224, 175, 83) 100%);
-  color:black;
+  background: linear-gradient(180deg, white 0%, rgb(224, 175, 83) 100%);
+  color: black;
   overflow: hidden;
-  
 }
-
 
 .flip-card-back .top {
   display: block;
@@ -99,16 +93,15 @@
   line-height: 1.1;
 }
 
-/* description / bio */
 .flip-card-back p {
   margin: 0 0 12px 0;
   font-size: 13px;
   color: black;
   line-height: 1.4;
-  max-height: 6.2em; 
+  max-height: 6.2em;
   overflow: hidden;
   font-size: 40px;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-overflow: ellipsis;
 }
 
@@ -123,19 +116,17 @@
 }
 
 .flip-card-back li {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   padding: 6px 8px;
   border-radius: 6px;
 }
+
 .flip-card-back li {
   font-size: 20px;
   font-weight: bold;
   margin: 8px 0;
-
 }
 
-
-/* links / actions at bottom */
 .flip-card-back .links {
   display: flex;
   gap: 10px;
@@ -144,14 +135,11 @@
   margin-top: 10px;
 }
 
-
-
 .flip-card-back .links a:hover {
-  background: rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.14);
   transform: translateY(-2px);
 }
 
-/* reserve button style (si tu veux un bouton séparé) */
 .flip-card-back .btn-reserve {
   margin-left: auto;
   background: #fff;
@@ -168,31 +156,29 @@
   transform: translateY(-2px);
 }
 
-/* Responsive: réduire la carte sur petits écrans */
 @media (max-width: 420px) {
   .flip-card { width: 200px; height: 320px; }
 }
 
-/* Container pour espacer les cartes */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; 
-  padding: 40px 20px; 
-  margin-top: 80px; 
+  gap: 30px;
+  padding: 40px 20px;
+  margin-top: 80px;
 }
-
 
 .reserve-btn {
   margin-top: 15px;
-  position: relative;
-  bottom: 10px;
   padding: 12px 24px;
   border: none;
   width: 200px;
   border-radius: 50px;
-  background: linear-gradient(45deg,rgb(193, 133, 133));
+
+  /* ✔ Nouveau background corrigé */
+  background: linear-gradient(45deg, rgb(193, 133, 133), rgb(160, 110, 110));
+
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -209,7 +195,6 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  /* background: rgba(255, 255, 255, 0.3); */
   transform: rotate(45deg);
   transition: all 0.5s;
 }
@@ -221,13 +206,10 @@
 
 .reserve-btn:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 10px rgba(255, 75, 43, 0.6);
+  box-shadow: 0 8px 10px rgba(205, 135, 22, 0.6);
 }
 
-
-.btn_par{
-    display: flex;
-    justify-content: center;
+.btn_par {
+  display: flex;
+  justify-content: center;
 }
-
-
