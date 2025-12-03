@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const FlipCard = ({ data }) => {
   const [flipped, setFlipped] = useState(false);
-  const navigate=useNavigate();
+  const navigate=useNavigate();ll
   return (
     <div
       className={`flip-card ${flipped ? "flipped" : ""}`}
