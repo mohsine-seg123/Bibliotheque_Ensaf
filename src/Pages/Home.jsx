@@ -20,9 +20,10 @@ export default function Home() {
       <p className="title1">Dive Into the World of LibraryEnsaf Books</p>
       <p className="title2">ENSAF Library Book Management System</p>
 
-      <div className="search-box">
+      <div id="searchBar" className="search-box">
         <input
           type="text"
+          id="bookSearchInput"
           placeholder="Enter the name of books"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}

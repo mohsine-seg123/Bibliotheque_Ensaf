@@ -9,16 +9,22 @@ export default function Login({ Users }) {
   const navigate = useNavigate();
 
   // ----- Login normal email/password -----
-  function handleSubmit(e) {
-    e.preventDefault();
+function handleSubmit(e) {
+  e.preventDefault();
 
-    const Exist = Users.find(
-      (user) => user.email === email && user.password === password
-    );
+  const Exist = Users.find(
+    (user) => user.email === email && user.password === password
+  );
 
-    if (Exist) navigate("/home");
-    else alert("Erreur d’authentification");
+  if (Exist) {
+    // ✅ Ajouter : enregistre dans localStorage pour Navbar
+    localStorage.setItem("currentUser", JSON.stringify(Exist));
+    navigate("/home");
+  } else {
+    alert("Erreur d’authentification");
   }
+}
+
 
   // ----- Login via Google -----
 async function handleGoogleLogin() {
@@ -60,7 +66,7 @@ async function handleGoogleLogin() {
           </button> 
         </div>
 
-        {/* ---- Bouton Login Google ---- */}
+  
         <button
           type="button"
           onClick={handleGoogleLogin}

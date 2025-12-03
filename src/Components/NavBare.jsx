@@ -1,12 +1,28 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { auth, loginWithGoogle, logout } from "./Firebase.jsx";
 
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null); // Firebase user
+  const [localUser, setLocalUser] = useState(null); // Utilisateur local
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    // Récupérer utilisateur local
+    const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+    setLocalUser(storedUser);
+
+    // Écouter Firebase
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleScroll = (id) => {
     if (location.pathname !== "/home" && location.pathname !== "/") {
@@ -29,7 +45,6 @@ export default function Nav_bare() {
 
       <div className="nav">
         <div className="nav-center">
-          {/* Liens vers sections de HomePage */}
           <span className="nav-link" onClick={() => handleScroll("home")}>
             Home
           </span>
@@ -79,9 +94,23 @@ export default function Nav_bare() {
         </div>
 
         <div className="nav-right">
-          <NavLink to="/login" className="login-link">
-            Login
-          </NavLink>
+          {user || localUser ? (
+            <button
+              className="login-link"
+              onClick={() => {
+                logout(); // déconnecte Firebase
+                localStorage.removeItem("currentUser"); // déconnecte utilisateur local
+                setLocalUser(null);
+                navigate("/login"); // redirige vers login
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <NavLink to="/login" className="login-link">
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </nav>
