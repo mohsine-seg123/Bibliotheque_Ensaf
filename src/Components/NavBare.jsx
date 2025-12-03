@@ -6,6 +6,13 @@ import React, { useState, useEffect, useRef } from "react";
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+import React, { useState, useEffect } from "react";
+import { auth, loginWithGoogle, logout } from "./Firebase.jsx";
+
+export default function Nav_bare() {
+  const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null); // Firebase user
+  const [localUser, setLocalUser] = useState(null); // Utilisateur local
   const navigate = useNavigate();
   const location = useLocation();
   const mobileMenuRef = useRef(null);
@@ -30,6 +37,19 @@ export default function Nav_bare() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    // Récupérer utilisateur local
+    const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+    setLocalUser(storedUser);
+
+    // Écouter Firebase
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleScroll = (id) => {
     if (location.pathname !== "/home" && location.pathname !== "/") {
@@ -114,9 +134,23 @@ export default function Nav_bare() {
         </div>
 
         <div className="nav-right">
-          <NavLink to="/login" className="login-link">
-            Login
-          </NavLink>
+          {user || localUser ? (
+            <button
+              className="login-link"
+              onClick={() => {
+                logout(); // déconnecte Firebase
+                localStorage.removeItem("currentUser"); // déconnecte utilisateur local
+                setLocalUser(null);
+                navigate("/login"); // redirige vers login
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <NavLink to="/login" className="login-link">
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
 

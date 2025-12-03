@@ -6,6 +6,7 @@ import Nav_bare from "./NavBare";
 import ScrollToTop from "./ScrollToTop";
 import "./SearchBooks.css";
 import Spinner from "./Spinner";
+import Footer from "./Footer";
 
 export default function SearchBooks() {
   const [loading,setLoading]=useState(true);
@@ -50,13 +51,18 @@ export default function SearchBooks() {
     }
     
   return (
-    <div className="cards-container" style={{ display: "flex", flexWrap: "wrap" }}>
-        <Nav_bare/>
+    <>
+     <Nav_bare  />
+    <div className="cards-container" style={{ display: "flex", flexWrap: "wrap" , marginTop: "40px"}}>
+       
       {books.map((b, i) => (
         <FlipCard key={i} data={b} />
       ))}
       <ScrollToTop/>
+        <Footer/>
     </div>
+  
+    </>
   );
 }
 

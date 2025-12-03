@@ -1,13 +1,13 @@
 .scroll-top-btn {
   position: fixed;
   bottom: 20px;
-  right: 5px;
-  width: 40px;
-  height: 40px;
+  right: 2px;
+  width: 45px;
+  height: 45px;
   border: none;
   outline: none;
   border-radius: 50%;
-  background-color: rgb(120, 100, 73);
+  background: linear-gradient(135deg, orange,rgb(169, 87, 87));
   color: #fff;
   font-size: 28px;
   font-weight: bold;
@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
 
-  box-shadow: 0 8px 20px rgba(106, 90, 249, 0.4);
+  box-shadow: 0 8px 20px rgb(169, 87, 87);
   animation: popIn 0.4s ease;
 
   transition: transform 0.3s ease, 
@@ -34,8 +34,8 @@
 /* Effet hover */
 .scroll-top-btn:hover {
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 12px 30px brown;
-  background-color: rgb(41, 38, 34);
+  box-shadow: 0 12px 30px rgb(169, 87, 87);
+  background: linear-gradient(135deg, orange,rgb(169, 87, 87));
 }
 
 /* Effet clic */

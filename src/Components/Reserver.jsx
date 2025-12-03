@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import "./Reserver.css";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 export default function Reserver() {
+
+  
+const location = useLocation();
+const book = location.state?.book;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -21,7 +28,7 @@ export default function Reserver() {
 
   const handleReserveClick = (e) => {
     e.stopPropagation();
-    navigate("/home");
+    setTimeout(()=>{ navigate("/home");},500)
   };
 
   const handleSubmit = (e) => {
@@ -35,10 +42,10 @@ export default function Reserver() {
       !form.endDate
     ) {
       alert("Please fill in all fields.");
-      return;
+      navigate("/reserve");
+    }else{
+        setSubmitted(true);
     }
-
-    setSubmitted(true);
   };
 
   return (
@@ -49,6 +56,9 @@ export default function Reserver() {
         {submitted ? (
           <div className="success-message">
             <h3>Reservation Confirmed ✔</h3>
+            <p>
+              <strong>Book:</strong> {book?.name}
+            </p>
 
             <p>
               <strong>Name:</strong> {form.name}
@@ -66,7 +76,7 @@ export default function Reserver() {
               <strong>Return Date:</strong> {form.endDate}
             </p>
 
-            <button onClick={() => setSubmitted(false)}>
+            <button onClick={handleReserveClick}>
               Make Another Reservation
             </button>
           </div>
@@ -112,13 +122,18 @@ export default function Reserver() {
               onChange={handleChange}
             />
 
-            <button
-              type="submit"
-              className="reserve-btn"
-              onClick={handleReserveClick}
-            >
-              Reserve
-            </button>
+            <div className="divbtn">
+              <button type="submit" className="reserve-btnt">
+                Reserve
+              </button>
+              <button
+                type="submit"
+                className="reserve-btnt"
+                onClick={handleReserveClick}
+              >
+                Annuler
+              </button>
+            </div>
           </form>
         )}
       </div>

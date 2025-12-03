@@ -1,11 +1,22 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .cards-container{
     background-color:#FFF8E7;
     /* width: 100%;
+.cards-container {
+  background-color: #fff8e7;
+    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* optionnel pour centrer les cartes */
+  align-items: center;
+  padding: 0;
+  margin: 10;
+
+  /* width: 100%;
    margin-top: 30px;
    margin-bottom: 0px; */
 }

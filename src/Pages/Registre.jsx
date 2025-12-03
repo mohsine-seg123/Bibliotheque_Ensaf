@@ -3,14 +3,12 @@ import { useState } from "react";
 import "./Registre.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Register({Users,setUsers}) {
+export default function Register({ Users, setUsers }) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
-  const [codeEnsaf,setCodeEnsaf]=useState("")
-
-
+  const [codeEnsaf, setCodeEnsaf] = useState("");
 
   const navigate = useNavigate();
 
@@ -25,27 +23,29 @@ export default function Register({Users,setUsers}) {
       codeEnsaf,
     });
 
-    const user={
+    const user = {
       fullName: fullName,
-      email:email,
-      phone:phone,
-      password:password,
-      codeEnsaf:codeEnsaf,
-    }
+      email: email,
+      phone: phone,
+      password: password,
+      codeEnsaf: codeEnsaf,
+    };
 
-      console.log(
-        "Current users in localStorage:",
-        JSON.parse(localStorage.getItem("users"))
-      );
+    console.log(
+      "Current users in localStorage:",
+      JSON.parse(localStorage.getItem("users"))
+    );
 
-
-   setUsers((users)=>{
-      const UpdatUsers=[...users,user];
+    setUsers((users) => {
+      const UpdatUsers = [...users, user];
       localStorage.setItem("users", JSON.stringify(UpdatUsers));
       return UpdatUsers;
-   });
+    });
 
     console.log("Current users:", [...Users]);
+    // Étape 3 : enregistrer le nouvel utilisateur comme connecté
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
     navigate("/home");
   };
 
@@ -84,33 +84,9 @@ export default function Register({Users,setUsers}) {
           name="password"
           required
         />
-
-        {/* <label htmlFor="numero">Phone</label>
-        <input
-          type="tel"
-          id="numero"
-          placeholder="Put your phone number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          name="phone"
-          required
-        /> */}
-{/* 
-        <label htmlFor="code">Code</label>
-        <input
-          type="password"
-          id="code"
-          placeholder="Put your code Ensaf"
-          value={codeEnsaf}
-          onChange={(e) => setCodeEnsaf(e.target.value)}
-          name="code"
-          autoComplete="new-password"
-          required
-        /> */}
-
         <div className="btno">
           <button className="validate" type="submit">
-           Create account 
+            Create account
           </button>
         </div>
         <div className="back">

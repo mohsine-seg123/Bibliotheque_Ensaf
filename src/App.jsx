@@ -15,7 +15,7 @@ function App() {
     const storedUsers = localStorage.getItem("users");
     return storedUsers ? JSON.parse(storedUsers) : [];
   });
-
+  
 
   return (
     <BrowserRouter>
@@ -38,5 +38,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
