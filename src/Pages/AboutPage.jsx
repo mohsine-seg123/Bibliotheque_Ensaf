@@ -3,7 +3,7 @@ import Stack from "../Components/Stack";
 import "./AboutPage.css";
 
 function About() {
-  const navigate = useNavigate();
+
 
   const goHomeAndFocus = () => {
     setTimeout(() => {

@@ -1,13 +1,9 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
-import React, { useState, useEffect, useRef } from "react";
-
-export default function Nav_bare() {
-  const [open, setOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect, useRef } from "react";
 import { auth, loginWithGoogle, logout } from "./Firebase.jsx";
+
 
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
@@ -17,7 +13,7 @@ export default function Nav_bare() {
   const location = useLocation();
   const mobileMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
-
+   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     const handleClickOutside = (event) => {
