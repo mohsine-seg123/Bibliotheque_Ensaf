@@ -65,6 +65,12 @@
   position: relative;
 }
 
+@media (max-width: 992px) {
+  .About {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+    width: 100%;
 /* ----- Tablette (≤ 992px) ----- */
 @media (max-width: 992px) {
   .About {
@@ -75,6 +81,7 @@
 
   .About_gauch {
     text-align: center;
+    width: 80%;
     padding: 0 20px; /* espace horizontal */
   }
 
@@ -149,4 +156,5 @@
     padding: 0.5rem;
     gap: 1rem;
   }
+}
 }

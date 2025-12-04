@@ -116,6 +116,49 @@
 
 
 
+/* 📱 Mobile : 1 colonne, image au-dessus, tout centré */
+@media (max-width: 600px) {
+
+  .contactt h1 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 26px;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .contact_left img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact_right {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .contact_right p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .contact_form button {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* 📟 Tablettes (600px - 900px) : toujours côte à côte mais plus serré */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  .contact {
+    gap: 30px;
+    padding: 30px;
 /* ----- Tablette (≤ 992px) ----- */
 @media (max-width: 992px) {
   .contact {
@@ -160,6 +203,28 @@
 
   .contact_left img {
     width: 100%;
+    max-width: 350px;
+  }
+
+  .contact_right {
+    padding: 18px;
+  }
+
+  .contact_right p {
+    font-size: 15px;
+  }
+}
+
+/* 💻 Écrans moyens (900px - 1200px) : ajustement de l'espace */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+  .contact {
+    gap: 40px;
+    padding: 30px 40px;
+  }
+
+  .contact_left img {
+    max-width: 380px;
     max-width: 300px;
   }
 

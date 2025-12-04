@@ -1,6 +1,8 @@
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo.jsx";
 import "./NavBare.css";
+import React, { useState, useEffect } from "react";
+import { auth, logout } from "./Firebase.jsx";
 import  { useState, useEffect, useRef } from "react";
 import { auth, loginWithGoogle, logout } from "./Firebase.jsx";
 
@@ -9,6 +11,8 @@ export default function Nav_bare() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null); // Firebase user
   const [localUser, setLocalUser] = useState(null); // Utilisateur local
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const mobileMenuRef = useRef(null);
@@ -35,11 +39,9 @@ export default function Nav_bare() {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    // Récupérer utilisateur local
     const storedUser = JSON.parse(localStorage.getItem("currentUser"));
     setLocalUser(storedUser);
 
-    // Écouter Firebase
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
     });
@@ -68,6 +70,10 @@ export default function Nav_bare() {
         <Logo />
       </div>
 
+      {/* Hamburger menu mobile */}
+      <div
+        className="hamburger"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       <div
         className="hamburger"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -78,6 +84,7 @@ export default function Nav_bare() {
         <span></span>
       </div>
 
+      <div className={`nav ${mobileMenuOpen ? "nav-mobile" : ""}`}>
   
       <div className="nav">
         <div className="nav-center">
@@ -134,10 +141,10 @@ export default function Nav_bare() {
             <button
               className="login-link"
               onClick={() => {
-                logout(); // déconnecte Firebase
-                localStorage.removeItem("currentUser"); // déconnecte utilisateur local
+                logout();
+                localStorage.removeItem("currentUser");
                 setLocalUser(null);
-                navigate("/login"); // redirige vers login
+                navigate("/login");
               }}
             >
               Logout
