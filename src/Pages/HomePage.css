@@ -4,6 +4,7 @@
   background-color:#FFF8E7;
   margin: 0;
   padding: 6rem;
+
   overflow-x: hidden;
   max-width: 100vw;
   overflow-y: auto;
@@ -127,3 +128,174 @@
   color: #3c3027;
 }
 
+
+
+@media screen and (max-width: 1024px) {
+  .homePage {
+    padding: 0rem 1.5rem;
+  }
+
+  .title1 {
+    font-size: 1.2rem;
+    padding: 0rem 1rem;
+  }
+
+  .title2 {
+    font-size: 2rem;
+    margin: 15px;
+  }
+
+  .search-box {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .categories {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .categories div {
+    width: 160px;
+    height: 110px;
+  }
+}
+
+
+/* Mobiles */
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 3rem 0.5rem 1rem 0.5rem;
+  }
+
+  .homePage {
+    padding: 0rem 0.5rem;
+  }
+
+  .title1 {
+    font-size: 1rem;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+
+  .title2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 15px 0;
+  }
+
+  .search-box {
+    padding: 0.2rem 0.8rem;
+    width: 60%;
+  }
+
+  .search-box input {
+    font-size: 0.9rem;
+  }
+
+  .search-box button {
+    padding: 0.35rem 0.6rem;
+  }
+
+  .images-row img {
+    height: 200px;
+    border-radius: 8px;
+  }
+
+  .categories {
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .categories div {
+    width: 120px;
+    height: 90px;
+    font-size: 18px;
+  }
+
+  .categories div img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .categories p {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    padding: 2.5rem 0.5rem 1rem 0.5rem;
+  }
+
+  .title1 {
+    font-size: 0.9rem;
+  }
+
+  .title2 {
+    font-size: 1.3rem;
+  }
+
+  .search-box {
+    flex-direction: row;
+    padding: 0.4rem;
+  }
+
+  .search-box input {
+    font-size: 0.85rem;
+  }
+
+  .images-row img {
+    height: 180px;
+  }
+
+  .categories {
+    gap:1rem;
+  }
+
+  .categories div {
+    width: calc(50% - 1rem);
+    max-width: 130px;
+    height: 85px;
+  }
+
+  .categories div img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .categories p {
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0 5px;
+  }
+}
+
+/* Très petits mobiles */
+@media screen and (max-width: 360px) {
+  .title1 {
+    font-size: 0.85rem;
+  }
+
+  .title2 {
+    font-size: 1.1rem;
+  }
+
+  .search-box input {
+    font-size: 0.8rem;
+  }
+
+  .categories div {
+    width: calc(50% - 0.5rem);
+    height: 80px;
+  }
+
+  .categories p {
+    font-size: 0.7rem;
+  }
+}

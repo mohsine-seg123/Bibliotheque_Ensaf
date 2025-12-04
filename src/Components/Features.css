@@ -80,3 +80,82 @@
 .features .submet button:hover {
   transform: scale(1.05);
 }
+
+/* 📱 Mobile : 1 colonne */
+@media (max-width: 600px) {
+
+  .features {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+
+  .features h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .features_cartes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature_carte {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .feature_carte h3 {
+    font-size: 22px;
+  }
+
+  .feature_carte h3 img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .feature_carte p {
+    font-size: 14px;
+  }
+}
+
+/* 📟 Tablettes (entre 600px et 900px) : 2 colonnes mais cartes plus petites */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  .features {
+    padding: 0 30px;
+  }
+
+  .features h1 {
+    font-size: 28px;
+  }
+
+  .features_cartes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 25px;
+  }
+
+  .feature_carte {
+    height: 150px;
+  }
+
+  .feature_carte h3 {
+    font-size: 24px;
+  }
+
+  .feature_carte h3 img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* 💻 Écrans moyens (900px – 1200px) : meilleure répartition */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+  .features_cartes {
+    gap: 25px 30px;
+  }
+
+  .feature_carte h3 {
+    font-size: 26px;
+  }
+}

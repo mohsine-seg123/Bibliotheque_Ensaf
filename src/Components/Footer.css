@@ -72,3 +72,47 @@
   font-size: 14px;
   color: #000000;
 }
+
+
+@media (max-width: 768px) {
+  .footer_top {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer_left, 
+  .footer_middle, 
+  .footer_right {
+    flex: 1 1 100%;
+  }
+
+  .footer_left p {
+    font-size: 14px;
+  }
+
+  .footer_middle p,
+  .footer_right p {
+    font-size: 14px;
+  }
+}
+
+/* ----- Responsive: Très petit mobile (≤ 480px) ----- */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer_left h3 {
+    font-size: 18px;
+  }
+
+  .footer_middle h1,
+  .footer_right h1 {
+    font-size: 16px;
+  }
+
+  .footer_bottom {
+    font-size: 12px;
+  }
+}
