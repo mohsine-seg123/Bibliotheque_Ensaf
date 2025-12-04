@@ -3,7 +3,7 @@ import Stack from "../Components/Stack";
 import "./AboutPage.css";
 
 function About() {
-  const navigate = useNavigate();
+
 
   const goHomeAndFocus = () => {
     setTimeout(() => {
@@ -46,6 +46,20 @@ function About() {
       <div className="About_droit">
         <Stack
           cardsData={images}
+          cardDimensions={{
+            width:
+              window.innerWidth <= 480
+                ? 200
+                : window.innerWidth <= 768
+                ? 250
+                : 320,
+            height:
+              window.innerWidth <= 480
+                ? 200
+                : window.innerWidth <= 768
+                ? 250
+                : 320,
+          }}
           cardDimensions={{ width: 320, height: 320 }}
           randomRotation={true}
           sendToBackOnClick={true}

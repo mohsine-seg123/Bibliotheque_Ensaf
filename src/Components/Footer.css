@@ -74,6 +74,25 @@
 }
 
 
+
+/* ----- Responsive: Tablette (≤ 992px) ----- */
+@media (max-width: 992px) {
+  .footer_top {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .footer_left h3 {
+    font-size: 20px;
+  }
+
+  .footer_middle h1,
+  .footer_right h1 {
+    font-size: 18px;
+  }
+}
+
+/* ----- Responsive: Mobile (≤ 768px) ----- */
 @media (max-width: 768px) {
   .footer_top {
     flex-direction: column;
@@ -115,4 +134,5 @@
   .footer_bottom {
     font-size: 12px;
   }
+}
 }

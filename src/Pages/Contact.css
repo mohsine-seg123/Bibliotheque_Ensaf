@@ -159,6 +159,46 @@
   .contact {
     gap: 30px;
     padding: 30px;
+/* ----- Tablette (≤ 992px) ----- */
+@media (max-width: 992px) {
+  .contact {
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 30px;
+  }
+
+  .contact_left img {
+    max-width: 350px;
+  }
+
+  .contact_right {
+    padding: 15px;
+  }
+
+  .contact_right h1 {
+    font-size: 28px;
+  }
+
+  .contact_right p {
+    font-size: 15px;
+  }
+
+  .contact_form button {
+    width: 140px;
+  }
+}
+
+/* ----- Mobile (≤ 768px) ----- */
+@media (max-width: 768px) {
+  .contactt h1 {
+    margin-left: 20px;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .contact {
+    padding: 20px;
+    gap: 20px;
   }
 
   .contact_left img {
@@ -185,5 +225,48 @@
 
   .contact_left img {
     max-width: 380px;
+    max-width: 300px;
+  }
+
+  .contact_right {
+    border: none;
+    box-shadow: none;
+    padding: 15px 10px;
+  }
+
+  .contact_right h1 {
+    font-size: 24px;
+  }
+
+  .contact_right p {
+    font-size: 14px;
+  }
+
+  .contact_form button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ----- Très petit mobile (≤ 480px) ----- */
+@media (max-width: 480px) {
+  .contactt h1 {
+    font-size: 22px;
+    margin: 10px;
+  }
+
+  .contact_right h1 {
+    font-size: 20px;
+  }
+
+  .contact_right p,
+  .input_group label,
+  .input_group input,
+  .input_group textarea {
+    font-size: 13px;
+  }
+
+  .contact {
+    padding: 15px 10px;
   }
 }

@@ -91,6 +91,18 @@
 
   .features h1 {
     font-size: 26px;
+
+
+
+/* ----- Tablette (≤ 992px) ----- */
+@media (max-width: 992px) {
+  .features {
+    padding: 0 30px;
+    gap: 25px;
+  }
+
+  .features h1 {
+    font-size: 28px;
     text-align: center;
   }
 
@@ -111,6 +123,17 @@
   .feature_carte h3 img {
     width: 30px;
     height: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+  }
+
+  .feature_carte h3 {
+    font-size: 26px;
+  }
+
+  .feature_carte h3 img {
+    width: 35px;
+    height: 35px;
   }
 
   .feature_carte p {
@@ -157,5 +180,57 @@
 
   .feature_carte h3 {
     font-size: 26px;
+/* ----- Mobile (≤ 768px) ----- */
+@media (max-width: 768px) {
+  .features {
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .features_cartes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature_carte {
+    height: auto;
+    padding: 20px 15px;
+  }
+
+  .feature_carte h3 {
+    font-size: 22px;
+  }
+
+  .feature_carte h3 img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .feature_carte p {
+    font-size: 13px;
+  }
+}
+
+/* ----- Très petit mobile (≤ 480px) ----- */
+@media (max-width: 480px) {
+  .features h1 {
+    font-size: 20px;
+  }
+
+  .feature_carte h3 {
+    font-size: 18px;
+  }
+
+  .feature_carte h3 img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .feature_carte p {
+    font-size: 12px;
+  }
+
+  .features {
+    padding: 0 10px;
   }
 }

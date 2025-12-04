@@ -215,6 +215,9 @@
 }
 
 
+
+
+/* ----- Tablette (≤ 992px) ----- */
 @media (max-width: 992px) {
   .cards-container {
     padding: 30px 15px;
@@ -245,3 +248,5 @@
     font-size: 14px;
   }
 }
+}
+
