@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import Stack from "../Components/Stack";
 import "./AboutPage.css";
 
@@ -60,7 +60,6 @@ function About() {
                 ? 250
                 : 320,
           }}
-          cardDimensions={{ width: 320, height: 320 }}
           randomRotation={true}
           sendToBackOnClick={true}
           sensitivity={180}
