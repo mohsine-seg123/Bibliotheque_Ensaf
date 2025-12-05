@@ -113,7 +113,7 @@
 
 @media (max-width: 768px) {
   .reservation-container {
-    width: 90%;
+    width: 80%;
     padding: 20px;
     height: auto;
   }
@@ -190,7 +190,7 @@
 
 @media (max-width: 480px) {
   .reservation-container {
-    width: 95%;
+    width: 80%;
     padding: 15px;
   }
 
