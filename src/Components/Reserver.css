@@ -114,16 +114,8 @@
 @media (max-width: 768px) {
   .reservation-container {
     width: 90%;
-    margin: 40px auto;
     padding: 20px;
-  }
-
-  .reservation-container h2 {
-    font-size: 22px;
-  }
-
-  .reservation-form label {
-    font-size: 14px;
+    height: auto;
   }
 
   .reservation-form input {
@@ -131,41 +123,27 @@
     padding: 8px;
   }
 
-  .reserve-btnt {
-    width: 100%;
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .divbtn {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .success-message {
-    font-size: 18px;
-    padding: 15px;
+  .reserve-btn {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 
   .success-message button {
     width: 100%;
-    font-size: 16px;
-  }
-
-  .reserver {
     padding: 10px;
-    height: auto;
   }
 }
 
+
 @media (max-width: 480px) {
   .reservation-container {
-    width: 95%;
+    width: 75%;
+    height: auto;
     padding: 15px;
   }
 
   .reservation-container h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .reservation-form input {
@@ -173,18 +151,17 @@
     padding: 7px;
   }
 
-  .reserve-btnt {
-    font-size: 14px;
-    padding: 9px;
+  .reserve-btn {
+    font-size: 13px;
+    padding: 8px 16px;
   }
 
-  .success-message {
+  .success-message h3 {
     font-size: 16px;
   }
 
-  .success-message button {
-    font-size: 15px;
-    padding: 10px;
+  .success-message p {
+    font-size: 13px;
   }
 }
 

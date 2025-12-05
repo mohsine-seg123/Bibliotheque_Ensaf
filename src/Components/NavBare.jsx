@@ -3,18 +3,20 @@ import Logo from "./Logo.jsx";
 import "./NavBare.css";
 import  { useState, useEffect, useRef } from "react";
 import { auth, loginWithGoogle, logout } from "./Firebase.jsx";
+import React from "react";
 
 
 export default function Nav_bare() {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(null); // Firebase user
-  const [localUser, setLocalUser] = useState(null); // Utilisateur local
+  const [user, setUser] = useState(null);
+  const [localUser, setLocalUser] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
   const mobileMenuRef = useRef(null);
   const hamburgerRef = useRef(null);
-   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -35,11 +37,9 @@ export default function Nav_bare() {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    // Récupérer utilisateur local
     const storedUser = JSON.parse(localStorage.getItem("currentUser"));
     setLocalUser(storedUser);
 
-    // Écouter Firebase
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
     });
@@ -61,13 +61,14 @@ export default function Nav_bare() {
     setMobileMenuOpen(false);
   };
 
-  
   return (
     <nav className="navbar">
+      {/* LOGO */}
       <div className="logo">
         <Logo />
       </div>
 
+      {/* HAMBURGER (unique) */}
       <div
         className="hamburger"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -78,8 +79,8 @@ export default function Nav_bare() {
         <span></span>
       </div>
 
-  
-      <div className="nav">
+      {/* NAV DESKTOP */}
+      <div className="nav desktop-nav">
         <div className="nav-center">
           <span className="nav-link" onClick={() => handleScroll("home")}>
             Home
@@ -134,10 +135,10 @@ export default function Nav_bare() {
             <button
               className="login-link"
               onClick={() => {
-                logout(); // déconnecte Firebase
-                localStorage.removeItem("currentUser"); // déconnecte utilisateur local
+                logout();
+                localStorage.removeItem("currentUser");
                 setLocalUser(null);
-                navigate("/login"); // redirige vers login
+                navigate("/login");
               }}
             >
               Logout
@@ -150,7 +151,7 @@ export default function Nav_bare() {
         </div>
       </div>
 
-     
+      {/* NAV MOBILE */}
       {mobileMenuOpen && (
         <div className="nav-mobile" ref={mobileMenuRef}>
           <div className="nav-center">
@@ -195,7 +196,6 @@ export default function Nav_bare() {
               Contact Us
             </span>
           </div>
-
 
           <div className="nav-right">
             <NavLink to="/login" className="login-link">
